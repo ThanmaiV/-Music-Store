@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function validate()
+{
+var p1 = document.forms["myForm"]["pwd"].value;
+var p2 = document.forms["myForm"]["rpwd"].value;
+if(p1.length<6)
+	{alert("min length of password should be 6");
+	return false;}
+	if(p1!=p2)
+	{
+		alert("re-entered password did not match with password");
+		return false;
+	}
+}
+
+</script>
+
+</head>
+<style>
+input[type=text],input[type=password],input[type=date]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+div {
+    border-radius: 5px;
+    background-color:#336290;
+	margin:100px;
+    padding: 20px;
+}
+label{
+color:white;
+}
+</style>
+<body>
+
+
+<h2>Signup</h2>
+<div>
+
+  <form name="myForm" action="signup.com" onsubmit="return validate()" method="post">
+  <table align=center>
+    <tr><td><label for="fname">First Name<font color="red">*</font></label></td>
+    <td><input type="text" id="fname" name="firstname" pattern="[A-Za-z]*" title="valid name containing alphabets" required></td>
+    </tr>
+    <tr><td><label for="lname">Last Name<font color="red">*</font></label></td>
+    <td><input type="text" id="lname" name="lastname" pattern="[A-Za-z]*" title="valid name containing alphabets" required></td>
+    </tr>
+    <tr><td><label for="mno">Mobile number<font color="red">*</font></label></td>
+	<td><input type="text" id="mno" name="mobilenumber" pattern="[0-9]{10}" title="valid mobileno" required>
+	</tr>
+	<tr><td><label for="email">Email Id<font color="red">*</font></label></td>
+	<td><input type="text" id="email" name="email" pattern="[A-Za-z0-1]*@[a-z]*.com" title="valid email in the form anc@def.com"required>
+	</tr>
+	<tr><td><label for="pwd">Enter Password<font color="red">*</font></label></td>
+	<td><input type="password" id="pwd" name="pwd" required>
+	</tr>
+	<tr><td><label for="rpwd">Renter Password<font color="red">*</font></label></td required>
+	<td><input type="password" id="rpwd" name="rpwd">
+	</tr>
+	<tr><td><label for="Gender">Gender</label></td>
+    <td><input type=radio id="Gender" name="gender" value=Male><label for=Male>Male</label>
+        <input type=radio id="Gender" name="gender" value=female><label for=Female>Female</label>
+</td></tr>
+<tr><td><label for="dob">DOB</label></td><td><input type="date" id="dob" name="dob"></td></tr>
+<tr><td><label for="address">Enter address</label></td>
+     <td><textarea id="address" name="address" rows=5 cols=50></textarea></td>
+</tr>
+   <tr><td> <input type="submit" value="Submit"></td></tr>
+   </table>
+  </form>
+</div>
+
+</body>
+</html>
